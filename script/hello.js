@@ -62,7 +62,7 @@ jobsContainer.addEventListener("click", function(event){
         card.removeAttribute("status")
     }
     switchTab(currentActiveTab)
-})
+});
 
 
 

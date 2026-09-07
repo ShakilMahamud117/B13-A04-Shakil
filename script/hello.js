@@ -11,19 +11,35 @@ const totalCounter = document.getElementById("total-counter");
 const interviewCounter = document.getElementById("interview-counter");
 const rejectedCounter = document.getElementById("rejected-counter");
 
+const jobsCounter = document.getElementById("jobs-counter");
+
+const noJobMsg = document.getElementById("no-jobs-msg")
+
 function updateCounter(){
     const allCards = allJobs.querySelectorAll(".card");
     let interviewCount = 0;
     let rejectedCount = 0;
+    let visibleCount = 0;
     allCards.forEach(card=>{
         const status = card.getAttribute("status")
         if(status?.toLowerCase() === "interview") interviewCount++;
         if(status?.toLowerCase() === "rejected") rejectedCount++;
+        if(!card.classList.contains("hidden")){
+            visibleCount++;
+        }
 
     })
     totalCounter.innerText = allCards.length;
     interviewCounter.innerText = interviewCount;
     rejectedCounter.innerText = rejectedCount;
+    jobsCounter.innerText = visibleCount;
+
+    if(visibleCount === 0){
+        noJobMsg.classList.remove("hidden")
+    }
+    else{
+        noJobMsg.classList.add("hidden")
+    }
 
 }
 
@@ -65,9 +81,9 @@ function switchTab(id){
         }
         
     })
+    updateCounter()
 }
 
-updateCounter()
 jobsContainer.addEventListener("click", function(event){
     const target = event.target;
     const card = target.closest(".card");
@@ -84,13 +100,13 @@ jobsContainer.addEventListener("click", function(event){
         card.setAttribute("status", "rejected")
     }
     else if(target.closest(".delete")){
-        currentStatus.innerText ="Not Applied"
-        card.removeAttribute("status")
+        card.remove()
     }
-    switchTab(currentActiveTab)
-    updateCounter()
     
+    switchTab(currentActiveTab)
 });
+switchTab(currentActiveTab)
+
 
 
 

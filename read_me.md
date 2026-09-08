@@ -1,5 +1,5 @@
 **1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?**
-2. **Ans:** getElementById আইডি দিয়ে ১টি এলিমেন্ট ধরে। getElementsByClassName ক্লাসের সব এলিমেন্টকে নেয়। querySelector প্রথম ম্যাচ করা CSS সিলেক্টর নেয় এবং querySelectorAll সবকটি সিলেক্টরকে NodeList হিসেবে দেয়।
+**Ans:** getElementById আইডি দিয়ে ১টি এলিমেন্ট ধরে। getElementsByClassName ক্লাসের সব এলিমেন্টকে নেয়। querySelector প্রথম ম্যাচ করা CSS সিলেক্টর নেয় এবং querySelectorAll সবকটি সিলেক্টরকে NodeList হিসেবে দেয়।
 
 **2. How do you create and insert a new element into the DOM?**
 **Ans:** প্রথমে একটা div ক্রিয়েট করতে হবে JS file এ document.createElement ইউজ করে, তারপর সেখানে `` দিয়ে মাল্টিলাইন HTML কোড লিখতে হবে। এরপর appendChild ব্যবহার করে এড করতে হবে।

@@ -110,6 +110,9 @@ switchTab(currentActiveTab)
 
 
 
+
+
+
 // const allTab = document.getElementById("all-tab")
 // const interviewTab = document.getElementById("interview-tab")
 // const rejectedTab = document.getElementById("rejected-tab")
